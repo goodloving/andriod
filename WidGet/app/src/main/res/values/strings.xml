@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WidGet</string>
+    <string name="hello">button测试</string>
+    <string name="wh">武汉</string>
+    <string name="ez">鄂州</string>
+    <string name="jz">荆州</string>
+</resources>
