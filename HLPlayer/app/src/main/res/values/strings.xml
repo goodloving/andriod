@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">手机影音</string>
+    <string name="splash_txt">正在启动...</string>
+    <string name="tag_music">音乐</string>
+    <string name="tag_vedio">视频</string>
+    <string name="tag_find">发现</string>
+    <string name="tag_live">直播</string>
+    <string name="tag_mycenter">我</string>
+</resources>

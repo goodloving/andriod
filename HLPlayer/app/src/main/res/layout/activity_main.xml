@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 中间内容-->
+    <FrameLayout
+        android:id="@+id/fl_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></FrameLayout>
+
+    <!-- 底部栏-->
+    <RadioGroup
+        android:id="@+id/rg_botton_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:padding="3dp">
+        <RadioButton
+            android:id="@+id/rb_music"
+            android:text="@string/tag_music"
+            android:drawableTop="@drawable/rb_music_drawable_pressed"
+            style="@style/Botton_tag_style"/>
+        <RadioButton
+            android:id="@+id/rb_vedio"
+            android:text="@string/tag_vedio"
+            android:drawableTop="@drawable/rb_vedio_drawable_pressed"
+            style="@style/Botton_tag_style"/>
+        <RadioButton
+            android:id="@+id/rb_find"
+            android:text="@string/tag_find"
+            android:drawableTop="@drawable/rb_find_drawable_pressed"
+            style="@style/Botton_tag_style"/>
+        <RadioButton
+            android:id="@+id/rb_live"
+            android:text="@string/tag_live"
+            android:drawableTop="@drawable/rb_music_live_pressed"
+            style="@style/Botton_tag_style"/>
+        <RadioButton
+            android:id="@+id/rb_mycenter"
+            android:text="@string/tag_mycenter"
+            android:drawableTop="@drawable/rb_my_drawable_pressed"
+            style="@style/Botton_tag_style"/>
+
+    </RadioGroup>
+    
+
+</LinearLayout>

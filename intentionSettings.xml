@@ -1,6 +1,0 @@
-<application>
-  <component name="IntentionManagerSettings">
-    <ignoreAction name="Android/Override Resource in Other Configuration..." />
-    <ignoreAction name="Java/Refactorings/Introduce local variable" />
-  </component>
-</application>
