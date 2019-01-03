@@ -1,8 +1,0 @@
-<application>
-  <component name="LanguageInjectionConfiguration">
-    <injection language="XML" injector-id="xml">
-      <display-name>RadioButton/@drawableTop</display-name>
-      <place><![CDATA[xmlAttribute().withLocalName(string().equalTo("drawableTop")).withNamespace(string().equalTo("http://schemas.android.com/apk/res/android")).withParent(xmlTag().withLocalName(string().equalTo("RadioButton")))]]></place>
-    </injection>
-  </component>
-</application>
