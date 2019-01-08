@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project.hl.hlplayer.view.TitleBar xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="horizontal"
+   android:layout_width="match_parent"
+   android:layout_height="45dp"
+   android:gravity="center"
+   android:background="@color/colorTitle">
+   <TextView
+       android:id="@+id/tv_tb_tag"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_weight="1"
+       android:text="@string/tag_music"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:textColor="@color/colorBlack"
+       android:textSize="16dp"/>
+   <RadioGroup
+       android:id="@+id/rg_tb"
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_weight="3"
+       android:orientation="horizontal">
+       <RadioButton
+           android:id="@+id/rb_tb_local"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:button="@null"
+           android:textColor="@drawable/tb_textcolor_checked"
+           android:textSize="16dp"
+           android:text="@string/tb_local"
+           android:gravity="center"/>
+       <RadioButton
+           android:id="@+id/rb_tb_net"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:button="@null"
+           android:textColor="@drawable/tb_textcolor_checked"
+           android:textSize="16dp"
+           android:text="@string/tb_net"
+           android:gravity="center"/>
+   </RadioGroup>
+
+   <ImageView
+       android:id="@+id/iv_tb_search"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:src="@drawable/find_pressed"
+       android:layout_weight="1"
+       android:layout_marginLeft="30dp" />
+
+</project.hl.hlplayer.view.TitleBar>

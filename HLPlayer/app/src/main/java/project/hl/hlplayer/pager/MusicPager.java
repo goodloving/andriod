@@ -2,10 +2,15 @@ package project.hl.hlplayer.pager;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.print.PrintAttributes;
+import android.text.Layout;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import project.hl.hlplayer.R;
 import project.hl.hlplayer.base.BasePage;
 
 public class MusicPager extends BasePage {
@@ -26,8 +31,10 @@ public class MusicPager extends BasePage {
     @Override
     public View initView() {
         textView = new TextView(context);
-        textView.setTextColor(Color.RED);
-        textView.setGravity(Gravity.CENTER);
+        textView.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        textView.setTextColor(textView.getResources().getColor(R.color.colorBlack));
+        textView.setText(R.string.tag_music);
+        textView.setTextSize(16);
         return textView;
     }
 
@@ -37,6 +44,5 @@ public class MusicPager extends BasePage {
     @Override
     public void initData() {
         super.initData();
-        textView.setText("音乐");
     }
 }

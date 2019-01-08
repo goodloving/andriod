@@ -6,4 +6,8 @@
     <string name="tag_find">发现</string>
     <string name="tag_live">直播</string>
     <string name="tag_mycenter">我</string>
+    <string name="tb_local">本地</string>
+    <string name="tb_net">网络</string>
+    <string name="no_vedio">本地没有视频···</string>
+    <string name="video_recommend">手机影音-系统推荐</string>
 </resources>

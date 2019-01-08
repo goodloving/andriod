@@ -4,6 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- 上部标题-->
+    <include
+        android:id="@+id/include_layout"
+        layout="@layout/titlebar"></include>
+
     <!-- 中间内容-->
     <FrameLayout
         android:id="@+id/fl_main_content"
