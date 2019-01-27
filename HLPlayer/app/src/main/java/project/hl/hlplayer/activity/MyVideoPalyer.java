@@ -473,11 +473,8 @@ public class MyVideoPalyer extends Activity implements View.OnClickListener{
     private class MyOnErrorListener implements MediaPlayer.OnErrorListener {
         @Override
         public boolean onError(MediaPlayer mp, int what, int extra) {
-            //Toast toast = Toast.makeText(MyVideoPalyer.this, "播放出错了！", Toast.LENGTH_LONG);
-            //toast.setGravity(Gravity.CENTER,0,0);
-            //toast.show();
             startVitamioPlayer();
-            return false;
+            return true;
         }
     }
 
@@ -519,6 +516,7 @@ public class MyVideoPalyer extends Activity implements View.OnClickListener{
                             position += 1;
                             uri = Uri.parse(mediaItems.get(position).getDataPath());
                             videoView.setVideoURI(uri);
+                            tvVideoName.setText(mediaItems.get(position).getName());
                         }
                     },3000);
                 }
@@ -565,7 +563,11 @@ public class MyVideoPalyer extends Activity implements View.OnClickListener{
      */
     @Override
     protected void onDestroy() {
-        unregisterReceiver(receiver);   //注销此广播
+        if(receiver!=null){
+            unregisterReceiver(receiver);   //注销此广播
+            receiver = null;
+        }
+        handler.removeCallbacksAndMessages(null);
         super.onDestroy();   //  先释放子类资源（写在该行前面），再释放父类资源------因为子类可能调用了父类的资源
     }
 

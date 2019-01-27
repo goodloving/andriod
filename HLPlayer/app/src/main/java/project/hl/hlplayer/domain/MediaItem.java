@@ -8,6 +8,8 @@ public class MediaItem implements Serializable {
    private Long size;
    private String dataPath;
    private String artist;
+   private String desc;
+   private String imageUri;
 
     public String getName() {
         return name;
@@ -49,14 +51,19 @@ public class MediaItem implements Serializable {
         this.artist = artist;
     }
 
-    @Override
-    public String toString() {
-        return "MediaItem{" +
-                "name='" + name + '\'' +
-                ", time=" + time +
-                ", size=" + size +
-                ", dataPath='" + dataPath + '\'' +
-                ", artist='" + artist + '\'' +
-                '}';
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getImageUri() {
+        return imageUri;
+    }
+
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
     }
 }

@@ -1,8 +1,10 @@
 package project.hl.hlplayer.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
@@ -474,11 +476,25 @@ public class VitamioVideoPalyer extends Activity implements View.OnClickListener
     private class MyOnErrorListener implements MediaPlayer.OnErrorListener {
         @Override
         public boolean onError(MediaPlayer mp, int what, int extra) {
-            Toast toast = Toast.makeText(VitamioVideoPalyer.this, "播放出错了！", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER,0,0);
-            toast.show();
+            showErrorDialog();
             return false;
         }
+    }
+
+    /**
+     * vitamio播发错误时
+     */
+    private void showErrorDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提示");
+        builder.setMessage("抱歉，无法播放此视频！！");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.show();
     }
 
     /**
@@ -498,6 +514,7 @@ public class VitamioVideoPalyer extends Activity implements View.OnClickListener
                         public void run() {
                             position += 1;
                             uri = Uri.parse(mediaItems.get(position).getDataPath());
+                            tvVideoName.setText(mediaItems.get(position).getName());
                             videoView.setVideoURI(uri);
                         }
                     },3000);
@@ -545,7 +562,11 @@ public class VitamioVideoPalyer extends Activity implements View.OnClickListener
      */
     @Override
     protected void onDestroy() {
-        unregisterReceiver(receiver);   //注销此广播
+        if(receiver!=null){
+            unregisterReceiver(receiver);   //注销此广播
+            receiver = null;
+        }
+        handler.removeCallbacksAndMessages(null);
         super.onDestroy();   //  先释放子类资源（写在该行前面），再释放父类资源------因为子类可能调用了父类的资源
     }
 

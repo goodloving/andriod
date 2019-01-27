@@ -3,6 +3,8 @@ package project.hl.hlplayer.utils;
 import android.content.Context;
 import android.net.TrafficStats;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
 
@@ -70,6 +72,15 @@ public class Utils {
 		lastTotalRxBytes = nowTotalRxBytes;
 		netSpeed = String.valueOf(speed) + " kb/s";
 		return netSpeed;
+	}
+
+	/**
+	 * 获取系统时间
+	 * @return
+	 */
+	public String getSystemTime(){
+		SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+		return format.format(new Date());
 	}
 
 }

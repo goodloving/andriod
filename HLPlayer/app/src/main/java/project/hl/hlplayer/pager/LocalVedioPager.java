@@ -156,10 +156,11 @@ public class LocalVedioPager extends BasePage {
             /**
              * 方法二：自己创建视频播放器播放视频-------显示意图
              * 自己新建一个视频播放器的class---MyVideoPlayer
-            Intent intent = new Intent(context, MyVideoPalyer.class);
-            intent.setDataAndType(Uri.parse(mediaItem.getDataPath()),"video/*");
-            context.startActivity(intent);
+             Intent intent = new Intent(context, MyVideoPalyer.class);
+             intent.setDataAndType(Uri.parse("https://135zyv6.xw0371.com/2018/12/26/cDmSCUoLDBKd8BAM/playlist.m3u8"),"video/*");
+             context.startActivity(intent);
              */
+
             /**
              * 方法三：传递播放列表，需要对列表进行序列化才能在进程中传递,先让mediaitem继承接口serializable
              */

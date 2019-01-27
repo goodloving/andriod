@@ -28,4 +28,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':vitamio')
+    implementation project(':xutils')
+    implementation files('libs/glide-full-4.7.0.jar')
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
